@@ -1,0 +1,169 @@
+/* Contenedor principal */  
+.main-container {  
+    width: 90%;  
+    max-width: 1000px;  
+    margin: 0 auto;  
+    padding: 20px;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+}  
+
+/* Estilo del contenedor del formulario */  
+.form-wrapper {  
+    background-color: #ffffff;  
+    padding: 20px;  
+    border-radius: 8px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    margin: 20px 0;  /* Espacio vertical alrededor del contenedor */  
+    max-width: 800px;  /* Ancho máximo específico */  
+    width: 100%;  /* Ancho completo dentro del contenedor */  
+}  
+
+/* Estilo de la tabla */  
+.table-wrapper {  
+    background-color: #ffffff;  
+    padding: 20px;  
+    border-radius: 8px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    margin: 20px 0;  /* Espacio vertical alrededor del contenedor */  
+    max-width: 1000px;  
+    width: 100%;  
+}  
+
+.form-group {  
+    margin-bottom: 15px; /* Espaciado entre grupos de campos */  
+}  
+
+.form-actions {  
+    display: flex;  
+    justify-content: center; /* Centrado de los botones */  
+    gap: 10px; /* Espacio entre botones */  
+    margin-top: 20px; /* Espacio por encima de los botones */  
+} 
+
+/* Formulario y tabla dentro de sus contenedores */  
+h1 {  
+    color: #333;  
+    margin-bottom: 20px;  
+}  
+
+h\:outputText {  
+    margin-bottom: 0;  
+    font-weight: bold;  
+    text-align: left;   
+}  
+
+.table-wrapper table {  
+    width: 100%;  
+    border-collapse: collapse;  
+}  
+
+.table-wrapper th,  
+.table-wrapper td {  
+    padding: 10px;  
+    border: 1px solid #ddd;  
+    text-align: left;  
+}  
+
+.table-wrapper th {  
+    background-color: #007bff;  
+    color: white;  
+}  
+
+.table-wrapper td {  
+    background-color: #f9f9f9;  
+}  
+
+/* Estilo de los inputText (Textboxes) */  
+input[type="text"], input[type="number"], input[type="date"] {  
+    width: 100%;  
+    padding: 12px;  
+    font-size: 14px;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+    outline: none;  
+    box-sizing: border-box; /* Incluye padding y border en el ancho */  
+}  
+
+/* Efecto al enfocarse en el textbox */  
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus {  
+    border-color: #007bff;  
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);  
+}  
+
+/* Estilo de los botones (h:commandButton y button) */  
+.btnGuardar, .btnEliminar, .btnModificar, .btnNuevo {  
+    padding: 10px 20px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    color: white;  
+    margin-right: 10px; /* Espacio entre botones */  
+    transition: background-color 0.3s ease, transform 0.2s; /* Transiciones suaves */  
+}  
+
+.btnGuardar {  
+    background-color: #4CAF50; /* Verde */  
+}  
+
+.btnEliminar {  
+    background-color: #f44336; /* Rojo */  
+}  
+
+.btnModificar {  
+    background-color: #008CBA; /* Azul */  
+}  
+
+.btnNuevo {  
+    background-color: #ff9900; /* naranja */  
+}  
+
+/* Efectos hover para los botones */  
+.btnGuardar:hover {  
+    background-color: #45a049; /* Verde más oscuro */  
+}  
+
+.btnEliminar:hover {  
+    background-color: #d32f2f; /* Rojo más oscuro */  
+}  
+
+.btnModificar:hover {  
+    background-color: #007bb5; /* Azul más oscuro */  
+}  
+
+.btnNuevo:hover {  
+    background-color: #007bb5; /* Azul más oscuro, igual que modificar */  
+    transform: scale(1.05); /* Aumenta el tamaño ligeramente */  
+}
+
+/* Estilo del formulario de búsqueda */
+.form-busqueda {
+    display: flex;
+    align-items: center;  /* Alinea verticalmente el input y el botón */
+    justify-content: flex-start; /* Alinea los elementos hacia la izquierda */
+    gap: 10px;  /* Espacio entre el input y el botón */
+}
+
+/* Estilo del campo de texto de búsqueda */
+.input-busqueda {
+    padding: 8px;
+    width: 250px; /* Puedes ajustar el tamaño según lo necesites */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Estilo del botón de búsqueda */
+.btn-buscar {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+

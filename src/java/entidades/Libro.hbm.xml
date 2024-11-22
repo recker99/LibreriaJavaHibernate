@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-11-2024 08:33:24 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidades.Libro" table="libro" catalog="libreria" optimistic-lock="version">
+        <id name="idLibro" type="java.lang.Long">
+            <column name="id_libro" />
+            <generator class="identity" />
+        </id>
+        <property name="isbn" type="string">
+            <column name="ISBN" length="20" not-null="true" />
+        </property>
+        <property name="titulo" type="string">
+            <column name="titulo" length="100" not-null="true" />
+        </property>
+        <property name="autor" type="string">
+            <column name="autor" length="100" not-null="true" />
+        </property>
+        <property name="editorial" type="string">
+            <column name="editorial" length="100" not-null="true" />
+        </property>
+        <property name="precio" type="int">
+            <column name="precio" not-null="true" />
+        </property>
+        <property name="fechaRegistro" type="timestamp">
+            <column name="fecha_registro" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

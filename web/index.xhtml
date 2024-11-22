@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://xmlns.jcp.org/jsf/html"  
+      xmlns:f="http://xmlns.jcp.org/jsf/core">  
+   <h:head>  
+       <title>Librería</title>  
+       <link rel="stylesheet" type="text/css" href="Styles/estilos.css" />  
+   </h:head>  
+   <h:body>  
+       <!-- Contenedor principal -->  
+       <div class="main-container">  
+           <h1>Formulario de Registro de Libros</h1>  
+
+           <!-- Formulario de búsqueda -->
+           <h:form id="formBusqueda" styleClass="form-busqueda">
+                <h:outputLabel for="busqueda" value="Buscar:" />
+                <h:inputText id="busqueda" value="#{libBean.busquedaTermino}" styleClass="input-busqueda" />
+                <h:commandButton value="Buscar" action="#{libBean.buscar}" styleClass="btn-buscar" />
+            </h:form>
+
+           <!-- Formulario de detalles del libro -->
+           <div class="form-wrapper">  
+               <h:form>
+                   <div class="form-container">  
+                       <div class="form-group">  
+                           <h:outputText value="ISBN:" />  
+                           <h:inputText value="#{libBean.isbn}" required="true" />  
+                       </div>  
+                       <div class="form-group">  
+                           <h:outputText value="Título:" />  
+                           <h:inputText value="#{libBean.titulo}" required="true" />  
+                       </div>  
+                       <div class="form-group">  
+                           <h:outputText value="Autor:" />  
+                           <h:inputText value="#{libBean.autor}" required="true" />  
+                       </div>  
+                       <div class="form-group">  
+                           <h:outputText value="Editorial:" />  
+                           <h:inputText value="#{libBean.editorial}" required="true" />  
+                       </div>  
+                       <div class="form-group">  
+                           <h:outputText value="Precio:" />  
+                           <h:inputText value="#{libBean.precio}" required="true" />  
+                       </div>   
+
+                       <!-- Contenedor para los botones centrados -->  
+                       <div class="form-actions">  
+                           <h:commandButton value="Guardar" action="#{libBean.guardar()}" styleClass="btnGuardar" />  
+                           <h:commandButton value="Eliminar" action="#{libBean.eliminar()}" styleClass="btnEliminar" readonly="#{!libBean.modoRegistro}"/>  
+                           <h:commandButton value="Modificar" action="#{libBean.modificar()}" styleClass="btnModificar"  />
+                           <h:commandButton value="Nuevo" action="#{libBean.limpiarFormulario}" styleClass="btnNuevo" />
+                       </div>  
+                   </div>  
+               </h:form>  
+           </div>  
+
+           <!-- Contenedor de la Tabla -->  
+           <div class="table-wrapper">  
+               <h:form>
+                   <h:dataTable value="#{libBean.librosFiltrados}" var="c" border="1">
+                       <h:column>  
+                           <f:facet name="header">IdLibro</f:facet>  
+                           <h:outputText value="#{c.idLibro}" />  
+                       </h:column>  
+                       
+                       <h:column>  
+                           <f:facet name="header">ISBN</f:facet>  
+                           <h:outputText value="#{c.isbn}" />  
+                       </h:column>  
+
+                       <h:column>  
+                           <f:facet name="header">Título</f:facet>  
+                           <h:outputText value="#{c.titulo}" />  
+                       </h:column>  
+
+                       <h:column>  
+                           <f:facet name="header">Autor</f:facet>  
+                           <h:outputText value="#{c.autor}" />  
+                       </h:column>  
+
+                       <h:column>  
+                           <f:facet name="header">Editorial</f:facet>  
+                           <h:outputText value="#{c.editorial}" />  
+                       </h:column>  
+
+                       <h:column>  
+                           <f:facet name="header">Precio</f:facet>  
+                           <h:outputText value="#{c.precio}" />  
+                       </h:column>  
+
+                       <h:column>  
+                           <f:facet name="header">Fecha Registro</f:facet>  
+                           <h:outputText value="#{c.fechaRegistro}" />  
+                       </h:column>
+                       
+                       <!-- Botón de seleccionar para cargar los detalles en el formulario -->
+                       <h:column>
+                           <f:facet name="header">Acciones</f:facet>
+                           <h:commandButton value="Seleccionar" action="#{libBean.seleccionarLibro(c)}" />
+                       </h:column>
+                   </h:dataTable>  
+               </h:form>
+           </div>  
+       </div>  
+   </h:body>  
+</html>
